@@ -99,8 +99,11 @@
 #define TEE_SCN_SE_CHANNEL_GET_SELECT_RESP	68
 #define TEE_SCN_SE_CHANNEL_TRANSMIT		69
 #define TEE_SCN_SE_CHANNEL_CLOSE		70
+#define TEE_SCN_CACHE_CLEAN			71
+#define TEE_SCN_CACHE_FLUSH			72
+#define TEE_SCN_CACHE_INVALIDATE		73
 
-#define TEE_SCN_MAX				70
+#define TEE_SCN_MAX				73
 
 /* Maximum number of allowed arguments for a syscall */
 #define TEE_SVC_MAX_ARGS			10

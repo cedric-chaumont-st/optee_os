@@ -102,6 +102,13 @@ TEE_Result tee_ta_verify_session_pointer(struct tee_ta_session *sess,
 
 int tee_ta_set_trace_level(int level);
 
+enum utee_cache_op {
+	TEE_CACHE_FLUSH,
+	TEE_CACHE_CLEAN,
+	TEE_CACHE_INVAL,
+};
+TEE_Result tee_uta_cache_operation(struct tee_ta_session *s,
+					int op, void *va, size_t len);
 void tee_ta_dump_current(void);
 void tee_ta_dump_all(void);
 

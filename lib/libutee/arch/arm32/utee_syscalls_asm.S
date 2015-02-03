@@ -216,3 +216,7 @@
 
         UTEE_SYSCALL utee_se_channel_close, \
                 TEE_SCN_SE_CHANNEL_CLOSE, 1
+
+        UTEE_SYSCALL utee_cache_clean, TEE_SCN_CACHE_CLEAN, 2
+        UTEE_SYSCALL utee_cache_flush, TEE_SCN_CACHE_FLUSH, 2
+        UTEE_SYSCALL utee_cache_invalidate, TEE_SCN_CACHE_INVALIDATE, 2

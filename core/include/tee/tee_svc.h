@@ -87,6 +87,10 @@ TEE_Result tee_svc_wait(uint32_t timeout);
 TEE_Result tee_svc_get_time(enum utee_time_category cat, TEE_Time *time);
 TEE_Result tee_svc_set_ta_time(const TEE_Time *time);
 
+TEE_Result tee_svc_cache_clean(void **va, size_t len);
+TEE_Result tee_svc_cache_flush(void **va, size_t len);
+TEE_Result tee_svc_cache_invalidate(void **va, size_t len);
+
 void tee_svc_trace_syscall(int num);
 
 

@@ -221,3 +221,18 @@ void TEE_Free(void *buffer)
 {
 	tee_user_mem_free(buffer);
 }
+
+/* Cache maintenance support (TA requires the CACHE_MAINTENANCE property) */
+TEE_Result TEE_CacheClean(char *buf, size_t len)
+{
+	return utee_cache_clean(buf, len);
+}
+TEE_Result TEE_CacheFlush(char *buf, size_t len)
+{
+	return utee_cache_flush(buf, len);
+}
+
+TEE_Result TEE_CacheInvalidate(char *buf, size_t len)
+{
+	return utee_cache_invalidate(buf, len);
+}
