@@ -42,7 +42,8 @@ size_t tee_user_mem_check_heap(void);
 /* Hint implementation defines */
 #define TEE_USER_MEM_HINT_NO_FILL_ZERO       0x80000000
 
-/* Cache maintenance support (TA requires the CACHE_MAINTENANCE property)
+/*
+ * Cache maintenance support (TA requires the CACHE_MAINTENANCE property)
  *
  * TEE_CacheClean() Write back to memory any dirty data cache lines. The line
  *                  is marked as not dirty. The valid bit is unchanged.

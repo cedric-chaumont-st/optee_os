@@ -1545,7 +1545,8 @@ TEE_Result tee_ta_verify_session_pointer(struct tee_ta_session *sess,
  * tee_uta_cache_operation - dynamic cache clean/inval request from a TA
  */
 TEE_Result tee_uta_cache_operation(struct tee_ta_session *sess,
-				int op, void *va, size_t len)
+				   enum utee_cache_operation op,
+				   void *va, size_t len)
 {
 	TEE_Result ret;
 	paddr_t pa = 0;
@@ -1564,15 +1565,15 @@ TEE_Result tee_uta_cache_operation(struct tee_ta_session *sess,
 		return TEE_ERROR_ACCESS_DENIED;
 
 	switch (op) {
-	case TEE_CACHE_FLUSH:
+	case TEE_CACHEFLUSH:
 		l1op = DCACHE_AREA_CLEAN_INV;
 		l2op = L2CACHE_AREA_CLEAN_INV;
 		break;
-	case TEE_CACHE_CLEAN:
+	case TEE_CACHECLEAN:
 		l1op = DCACHE_AREA_CLEAN;
 		l2op = L2CACHE_AREA_CLEAN;
 		break;
-	case TEE_CACHE_INVAL:
+	case TEE_CACHEINVALIDATE:
 		l1op = DCACHE_INVALIDATE;
 		l2op = L2CACHE_INVALIDATE;
 		break;
